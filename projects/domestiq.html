@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DomestiQ - Geoffrey Magana Gitau</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <meta
+      name="description"
+      content="A React-based household inventory manager that helps users track items, manage storage, and monitor usage with charts."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Project-specific styles */
+      .project-page {
+        min-height: 100vh;
+        background: var(--background);
+        padding-top: 80px;
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .project-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        gap: 3rem;
+      }
+
+      @media (max-width: 1024px) {
+        .project-container {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+
+      .project-main {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .project-header {
+        background: var(--card);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .project-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--foreground);
+      }
+
+      .project-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .project-status {
+        background: var(--primary);
+        color: white;
+        padding: 0.15rem 0.5rem;
+        border-radius: 0.75rem;
+        font-size: 0.7rem;
+        font-weight: 500;
+      }
+
+      .project-media {
+        background: var(--card);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .project-media img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-section {
+        background: var(--card);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .project-section h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--foreground);
+      }
+
+      .project-section p {
+        color: var(--muted);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+
+      .project-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .sidebar-card {
+        background: var(--card);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .sidebar-card h4 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--foreground);
+      }
+
+      .tech-stack-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .tech-tag {
+        background: rgba(160, 32, 240, 0.1);
+        color: var(--primary);
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      .project-link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--primary);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-link-btn:hover {
+        background: var(--primary-light);
+        transform: translateY(-2px);
+      }
+
+      .project-link-btn.github {
+        background: #333;
+      }
+
+      .project-link-btn.github:hover {
+        background: #555;
+      }
+
+      .project-link-btn.website {
+        background: #007acc;
+      }
+
+      .project-link-btn.website:hover {
+        background: #005a9e;
+      }
+
+      .contact-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .contact-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .contact-btn.primary {
+        background: var(--primary);
+        color: white;
+      }
+
+      .contact-btn.secondary {
+        background: rgba(160, 32, 240, 0.1);
+        color: var(--primary);
+      }
+
+      .contact-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .contact-btn.primary:hover {
+        background: var(--primary-light);
+      }
+
+      .contact-btn.secondary:hover {
+        background: var(--primary);
+        color: white;
+      }
+
+      .project-info-item {
+        margin-bottom: 1rem;
+      }
+
+      .project-info-item h5 {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--muted);
+        margin-bottom: 0.25rem;
+      }
+
+      .project-info-item p {
+        font-size: 0.875rem;
+        color: var(--foreground);
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="../index.html">Home</a>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#education">Education</a></li>
+          <li><a href="../index.html#interests">Interests</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Project Page -->
+    <section class="project-page">
+      <div class="project-container">
+        <!-- Main Content -->
+        <div class="project-main">
+          <div class="project-header">
+            <h1 class="project-title">DomestiQ</h1>
+            <div class="project-meta">
+              <span>2025</span>
+              <span>•</span>
+              <span>Household Inventory Manager</span>
+              <span>•</span>
+              <span class="project-status">In Development</span>
+            </div>
+          </div>
+
+          <div class="project-media">
+            <img
+              src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754073152/whxvcbsni2qpl0xw2ywu.png"
+              alt="DomestiQ Project Screenshot"
+            />
+          </div>
+
+          <div class="project-section">
+            <h3>Problem Tackled</h3>
+            <p>
+              I built this project to help households manage room-by-room
+              inventory and restocking budgets with smart visualizations. The
+              goal was to create a comprehensive household management system
+              that tracks items, monitors usage patterns, and provides
+              intelligent budget recommendations.
+            </p>
+          </div>
+
+          <div class="project-section">
+            <h3>Target Users/Market</h3>
+            <p>
+              Tech-savvy homeowners, minimalists, and renters managing shared
+              spaces who want to optimize their household management and reduce
+              waste through better inventory tracking.
+            </p>
+          </div>
+
+          <div class="project-section">
+            <h3>Challenges Faced</h3>
+            <p>
+              Designing intuitive UI for room + storage-level tracking; creating
+              meaningful ring chart usage summaries; balancing simplicity with
+              comprehensive functionality for household management.
+            </p>
+          </div>
+
+          <div class="project-section">
+            <h3>Successes Achieved</h3>
+            <p>
+              Established modular layout for rooms/cabinets/shelves and shopping
+              tracker. Created a foundation for local AI integration for budget
+              tips and consumption suggestions, with plans for image-based
+              receipt analysis using TensorFlow.js.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="project-sidebar">
+          <!-- Project Info -->
+          <div class="sidebar-card">
+            <h4>Project Info</h4>
+            <div class="project-info-item">
+              <h5>Type</h5>
+              <p>Household Inventory Manager (PWA-Ready)</p>
+            </div>
+            <div class="project-info-item">
+              <h5>Stage</h5>
+              <p>In Development</p>
+            </div>
+            <div class="project-info-item">
+              <h5>Design Inspiration</h5>
+              <p>Smart home dashboards, IKEA Home Planner, finance trackers</p>
+            </div>
+          </div>
+
+          <!-- Tech Stack -->
+          <div class="sidebar-card">
+            <h4>Tech Stack</h4>
+            <div class="tech-stack-list">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">Chart.js</span>
+              <span class="tech-tag">LocalStorage</span>
+              <span class="tech-tag">IndexedDB</span>
+              <span class="tech-tag">TensorFlow.js</span>
+            </div>
+          </div>
+
+          <!-- Project Links -->
+          <div class="sidebar-card">
+            <h4>Project Links</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem">
+              <a href="#" class="project-link-btn website"> 💻 Website </a>
+              <a href="#" class="project-link-btn github"> 📁 GitHub </a>
+            </div>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="sidebar-card">
+            <h4>Interested in this project?</h4>
+            <p>
+              I'm always open to discussing potential collaborations,
+              improvements, or sharing insights about this household management
+              platform.
+            </p>
+            <div class="contact-buttons">
+              <a
+                href="mailto:geoffreymagana21@gmail.com"
+                class="contact-btn primary"
+              >
+                <span>📧</span>
+                Get in touch →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="../index.html#about">About</a></li>
+              <li><a href="../index.html#projects">Projects</a></li>
+              <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Education & Interests</h4>
+            <ul>
+              <li>
+                <a href="../index.html#education">Educational Background</a>
+              </li>
+              <li>
+                <a href="../index.html#interests">Interests & Passions</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <ul>
+              <li>
+                <a href="https://x.com/supremeimprints" target="_blank"
+                  >Twitter</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/geoffreymagana" target="_blank"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/geoffrey-magana-15a8b11b8"
+                  target="_blank"
+                  >LinkedIn</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <ul>
+              <li><a href="mailto:geoffreymagana21@gmail.com">Email</a></li>
+              <li><a href="tel:0742663614">Phone</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Geoffrey Magana Gitau. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
