@@ -9,15 +9,16 @@ This portfolio was built/developed specifically for the **July 2025 Cohort Hacka
 - **Responsive design** - Optimized for all devices
 - **Modern UI/UX** - Clean, professional design with smooth interactions
 
-
+## Landing Page Screenshot
+[![My Portfolio Landing](https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754080749/emidvgkx5sh96ej9t6cs.png)]()
 ## Features
 
-- **Responsive Design**: Optimized for both desktop and mobile devices
+- **Responsive Design**: Optimised for both desktop and mobile devices
 - **Modern UI**: Clean, minimalist design with smooth animations
 - **Project Showcase**: Static project grid showcasing development work
 - **Contact Form**: Simple mailto contact form for easy communication as per project guidelines
 - **No JavaScript**: Pure HTML/CSS implementation for hackathon compliance
-- **Glass Effect Navigation**: Subtle blurry glass effect on header (thanks to Youtube videos)*
+- **Glass Effect Navigation**: Subtle blurry glass effect on header (thanks to YouTube videos)*
 - **Floating Tech Stack**: Animated tech stack elements in hero section (this was some cool math)
 - **Comprehensive Project Pages**: Detailed project information with proper layout
 
@@ -25,7 +26,7 @@ This portfolio was built/developed specifically for the **July 2025 Cohort Hacka
 
 - **Home Page** (`index.html`): Main portfolio with hero, about, education, interests, projects, and contact sections
 - **Projects Page** (`projects.html`): Complete collection of all my current and paused projects
-- **Project Detail Pages** (`projects/*.html`): Individual project pages with detailed infoon what I have been orking on
+- **Project Detail Pages** (`projects/*.html`): Individual project pages with detailed info on what I have been working on
 
 ## Sections
 
@@ -33,7 +34,7 @@ This portfolio was built/developed specifically for the **July 2025 Cohort Hacka
 - Professional title and subtitle
 - Call-to-action button
 - Animated tech stack display
-- Dotted background pattern (inspired by canvas UI, I love this effect and most of my projects use this in the hero section)
+- Dotted background pattern (inspired by canvas UI, I love this effect, and most of my projects use this in the hero section)
 
 ### About Section
 - Personal intro
@@ -53,7 +54,7 @@ This portfolio was built/developed specifically for the **July 2025 Cohort Hacka
 - Featured projects (just 3 on main page for clean UI)
 - Project cards with images, descriptions, and tags
 - Hover effects and smooth transitions
-- Clickin a project card links/directs to projects page
+- Clicking a project card links/directs to the projects page
 
 ### Contact Section
 - Contact information with icons
@@ -92,7 +93,7 @@ The project uses a custom CSS framework with:
 
 - No external JavaScript libraries
 - No frameworks or dependencies
-- Optimized CSS with efficient selectors
+- Optimised CSS with efficient selectors
 - Minimal HTTP requests
 - Fast loading times
 - Pure CSS animations and interactions
@@ -120,9 +121,8 @@ The project uses a custom CSS framework with:
 1. **Pure CSS Mobile Menu**: Successfully implemented without JavaScript
 2. **Responsive Design**: Perfect adaptation across all devices
 3. **Performance**: Fast loading with minimal dependencies
-4. **Accessibility**: Full WCAG 2.1 compliance
-5. **Modern Design**: Professional, clean aesthetic
-6. **Hackathon Compliance**: Strict adherence to no-JS requirement
+4. **Modern Design**: Professional, clean aesthetic
+5. **Hackathon Compliance**: Strict adherence to no-JS requirement
 
 ---
 
@@ -138,4 +138,4 @@ Thank you for making web development accessible and enjoyable!
 
 ---
 
-Built with ❤️ using pure HTML and CSS for the July 2025 Cohort Hackathon Challenge.
+Built with ❤️ using raw HTML and CSS for the July 2025 Cohort Hackathon Challenge.
