@@ -76,17 +76,24 @@ The project uses a custom CSS framework with:
 ## File Structure
 
 ```
-├── index.html              # Main portfolio page
-├── projects.html           # All projects page
-├── contact.html            # Contact page
-├── projects/               # Project detail pages
-│   ├── domestiq.html      # DomestiQ project details
-│   ├── zellow-enterprises.html
-│   ├── investa.html
+├── index.html                        # Main portfolio page
+├── projects.html                     # All projects page
+├── contact.html                      # Contact page (if present)
+├── styles.css                        # All styling and responsive design
+├── README.md                         # Project documentation
+├── projects/                         # Project detail pages
+│   ├── alliance-movers-app.html
 │   ├── cine-mon.html
-│   └── 
-├── styles.css              # All styling and responsive design
-└── README.md              # Project documentation
+│   ├── domestiq.html
+│   ├── household-constitution.html
+│   ├── investa.html
+│   ├── mama-fua-platform.html
+│   ├── mumiras-cakes.html
+│   ├── supreme-imprints-art-portfolio.html
+│   ├── taskwise.html
+│   ├── tinytasks.html
+│   ├── vercehost.html
+│   └── zellow-enterprises.html
 ```
 
 ## Performance
