@@ -77,7 +77,7 @@ The project uses a custom CSS framework with:
 - **Responsive Grid**: CSS Grid and Flexbox for layout
 - **Mobile-First**: Responsive design with mobile navigation
 - **Glass Effect**: Subtle blurry glass effect on navigation header
-- **Pure CSS Mobile Menu**: Checkbox hack for mobile navigation (still doesn't work)
+- **Pure CSS Mobile Menu**: Checkbox hack for mobile navigation (still doesn't work, but as a workaround, I used the footer links)
 
 ## File Structure
 
