@@ -4,7 +4,7 @@ A clean, modern portfolio website built with pure HTML and CSS for the **July 20
 
 ## 🏆 Hackathon Project
 
-This portfolio was built/developed specifically for the **July 2025 Cohort Hackathon Challenge**, demonstrating:
+This portfolio was built/developed specifically for the **July 2025 Cohort Hackathon 1 Challenge**, demonstrating:
 - **Pure HTML/CSS implementation** - No JavaScript, libraries, or frameworks
 - **Responsive design** - Optimized for all devices
 - **Modern UI/UX** - Clean, professional design with smooth interactions
@@ -22,13 +22,14 @@ This portfolio was built/developed specifically for the **July 2025 Cohort Hacka
 - **Floating Tech Stack**: Animated tech stack elements in hero section (this was some cool math)
 - **Comprehensive Project Pages**: Detailed project information with proper layout
 
-## Pages
+## Main Pages
 
 - **Home Page** (`index.html`): Main portfolio with hero, about, education, interests, projects, and contact sections
 - **Projects Page** (`projects.html`): Complete collection of all my current and paused projects
 - **Project Detail Pages** (`projects/*.html`): Individual project pages with detailed info on what I have been working on
 
 ## Sections
+### My project contains the following sections
 
 ### Hero Section
 - Professional title and subtitle
@@ -50,11 +51,16 @@ This portfolio was built/developed specifically for the **July 2025 Cohort Hacka
 - Key areas of interest
 - Technical passions and art passions
 
+### Programming Languages Section
+- Intro
+- Proficient and Progressive
+- Dabbled - Python, mainly for automation
+
 ### Projects Section
 - Featured projects (just 3 on main page for clean UI)
 - Project cards with images, descriptions, and tags
 - Hover effects and smooth transitions
-- Clicking a project card links/directs to the projects page
+- Clicking a project card links/directs to the project's page
 
 ### Contact Section
 - Contact information with icons
@@ -76,12 +82,13 @@ The project uses a custom CSS framework with:
 ## File Structure
 
 ```
-├── index.html                        # Main portfolio page
-├── projects.html                     # All projects page
-├── contact.html                      # Contact page (if present)
-├── styles.css                        # All styling and responsive design
-├── README.md                         # Project documentation
-├── projects/                         # Project detail pages
+├── index.html                                              # Main portfolio page
+├── projects.html                                           # All projects page
+├── styles.css                                              # All styling and responsive designs
+├── README.md                                               # Project documentation
+├── CV/                                                     # Downloadable CV
+│   ├── GEOFFREY MAGANA PROFESSIONAL PROFILE.pdf
+├── projects/                                               # Project detail pages
 │   ├── alliance-movers-app.html
 │   ├── cine-mon.html
 │   ├── domestiq.html
@@ -117,7 +124,7 @@ The project uses a custom CSS framework with:
 ## Contact Information
 
 - **Email**: geoffreymagana21@gmail.com
-- **Phone**: 0742663614
+- **Phone**: 0742663614/0769077283
 - **Location**: Nairobi, Kenya
 - **Social**: Twitter, GitHub, LinkedIn
 
@@ -127,7 +134,7 @@ The project uses a custom CSS framework with:
 
 1. **Pure CSS Mobile Menu**: Successfully implemented without JavaScript
 2. **Responsive Design**: Perfect adaptation across all devices
-3. **Performance**: Fast loading with minimal dependencies
+3. **Performance**: Fast loading
 4. **Modern Design**: Professional, clean aesthetic
 5. **Hackathon Compliance**: Strict adherence to no-JS requirement
 
@@ -135,11 +142,12 @@ The project uses a custom CSS framework with:
 
 ##  **Acknowledgments**
 
-This project was quite challenging to build with pure HTML/CSS constraints, but I'm grateful for the amazing resources that helped me learn and grow:
+This project was quite challenging to build with pure HTML/CSS constraints, especially since I have become more proficient with TypeScript because of my range of projects. 
+Still, I'm grateful for the amazing resources that helped me learn and grow:
 
 - **Kevin Powell** on YouTube - Your CSS tutorials and responsive design guidance were invaluable
 - **FreeCodeCamp** - The comprehensive web development curriculum provided the foundation for this project
-- **PLP Academy Web Dev Class** - Took me back to basics and opened my eyes to some key concepts that helped build this
+- **PLP Academy Web Dev Class** - Took me back to basics and opened my eyes to some key concepts that helped build this, with the fundamentals in mind.
 
 Thank you for making web development accessible and enjoyable! 
 
