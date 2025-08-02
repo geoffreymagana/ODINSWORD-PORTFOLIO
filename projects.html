@@ -1,507 +1,630 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Projects - Geoffrey Magana Gitau</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <meta name="description" content="Complete portfolio of web development and design projects by Geoffrey Magana Gitau.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta
+      name="description"
+      content="Complete portfolio of web development and design projects by Geoffrey Magana Gitau."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        .projects-page {
-            min-height: 100vh;
-            background: var(--background);
-            padding-top: 80px;
-        }
-        
-        .projects-header {
-            text-align: center;
-            padding: 4rem 0 2rem;
-        }
-        
-        .projects-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--foreground);
-        }
-        
-        .projects-subtitle {
-            font-size: 1.25rem;
-            color: var(--muted);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
+      .projects-page {
+        min-height: 100vh;
+        background: var(--background);
+        padding-top: 80px;
+      }
+
+      .projects-header {
+        text-align: center;
+        padding: 4rem 0 2rem;
+      }
+
+      .projects-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--foreground);
+      }
+
+      .projects-subtitle {
+        font-size: 1.25rem;
+        color: var(--muted);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .all-projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+
+      @media (min-width: 768px) {
         .all-projects-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 4rem;
+          grid-template-columns: repeat(2, 1fr);
         }
-        
-        @media (min-width: 768px) {
-            .all-projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+      }
+
+      @media (min-width: 1024px) {
+        .all-projects-grid {
+          grid-template-columns: repeat(3, 1fr);
         }
-        
-        @media (min-width: 1024px) {
-            .all-projects-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .project-card-detailed {
-            background: var(--card);
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        
-        .project-card-detailed:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-image-detailed {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .project-image-detailed img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .project-card-detailed:hover .project-image-detailed img {
-            transform: scale(1.05);
-        }
-        
-        .project-content-detailed {
-            padding: 1.5rem;
-        }
-        
-        .project-header-detailed {
-            margin-bottom: 1rem;
-        }
-        
-        .project-title-detailed {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--foreground);
-        }
-        
-        .project-meta-detailed {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.8rem;
-            color: var(--muted);
-            margin-bottom: 0.5rem;
-        }
-        
-        .project-status-detailed {
-            background: var(--primary);
-            color: white;
-            padding: 0.15rem 0.5rem;
-            border-radius: 0.75rem;
-            font-size: 0.7rem;
-            font-weight: 500;
-        }
-        
-        .project-description-detailed {
-            color: var(--muted);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-            font-size: 0.9rem;
-        }
-        
-        .project-tags-detailed {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .tag-detailed {
-            background: rgba(160, 32, 240, 0.1);
-            color: var(--primary);
-            padding: 0.2rem 0.6rem;
-            border-radius: 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-        
-        .back-to-home {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
+      }
+
+      .project-card-detailed {
+        background: var(--card);
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .project-card-detailed:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-image-detailed {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .project-image-detailed img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .project-card-detailed:hover .project-image-detailed img {
+        transform: scale(1.05);
+      }
+
+      .project-content-detailed {
+        padding: 1.5rem;
+      }
+
+      .project-header-detailed {
+        margin-bottom: 1rem;
+      }
+
+      .project-title-detailed {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--foreground);
+      }
+
+      .project-meta-detailed {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 0.5rem;
+      }
+
+      .project-status-detailed {
+        background: var(--primary);
+        color: white;
+        padding: 0.15rem 0.5rem;
+        border-radius: 0.75rem;
+        font-size: 0.7rem;
+        font-weight: 500;
+      }
+
+      .project-description-detailed {
+        color: var(--muted);
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        font-size: 0.9rem;
+      }
+
+      .project-tags-detailed {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .tag-detailed {
+        background: rgba(160, 32, 240, 0.1);
+        color: var(--primary);
+        padding: 0.2rem 0.6rem;
+        border-radius: 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      .back-to-home {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">Geoffrey Magana Gitau</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#education">Education</a></li>
-                <li><a href="index.html#interests">Interests</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html">Geoffrey Magana Gitau</a>
         </div>
+        <ul class="nav-menu">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#education">Education</a></li>
+          <li><a href="index.html#interests">Interests</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </nav>
 
     <!-- Projects Page -->
     <section class="projects-page">
-        <div class="container">
-            <div class="projects-header">
-                <h1 class="projects-title">All Projects</h1>
-                <p class="projects-subtitle">A comprehensive collection of my web development and design work, showcasing solutions for various challenges and industries.</p>
-            </div>
-            
-            <div class="back-to-home">
-                <a href="index.html" class="btn btn-secondary">← Back to Home</a>
-            </div>
-            
-            <div class="all-projects-grid">
-                <!-- Zellow Enterprises -->
-                <a href="projects/zellow-enterprises.html" class="project-card-detailed">
-                    <div class="project-image-detailed">
-                        <img src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1753043502/wgwxd1qjbzmld0o6mdyi.png" alt="Zellow Enterprises">
-                    </div>
-                    <div class="project-content-detailed">
-                        <div class="project-header-detailed">
-                            <h3 class="project-title-detailed">Zellow Enterprises</h3>
-                            <div class="project-meta-detailed">
-                                <span>2025</span>
-                                <span>•</span>
-                                <span class="project-status-detailed">Completed</span>
-                            </div>
-                        </div>
-                        <p class="project-description-detailed">Comprehensive operations and logistics management platform with advanced modules for Client Management, Gifting, Dispatch, Inventory, Finance, and extensive Product Customization.</p>
-                        <div class="project-tags-detailed">
-                            <span class="tag-detailed">Next.js</span>
-                            <span class="tag-detailed">Firebase</span>
-                            <span class="tag-detailed">MPESA API</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- DomestiQ -->
-                <a href="projects/domestiq.html" class="project-card-detailed">
-                    <div class="project-image-detailed">
-                        <img src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754073152/whxvcbsni2qpl0xw2ywu.png" alt="DomestiQ">
-                    </div>
-                    <div class="project-content-detailed">
-                        <div class="project-header-detailed">
-                            <h3 class="project-title-detailed">DomestiQ</h3>
-                            <div class="project-meta-detailed">
-                                <span>2025</span>
-                                <span>•</span>
-                                <span class="project-status-detailed">In Development</span>
-                            </div>
-                        </div>
-                        <p class="project-description-detailed">React-based household inventory manager with interactive charts, restocking budgets, and receipt image processing for smart home management.</p>
-                        <div class="project-tags-detailed">
-                            <span class="tag-detailed">React</span>
-                            <span class="tag-detailed">TailwindCSS</span>
-                            <span class="tag-detailed">Charts</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Investa -->
-                <a href="projects/investa.html" class="project-card-detailed">
-                    <div class="project-image-detailed">
-                        <img src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754075198/cuu7r6pudjo4c8cl98kn.png" alt="Investa">
-                    </div>
-                    <div class="project-content-detailed">
-                        <div class="project-header-detailed">
-                            <h3 class="project-title-detailed">Investa</h3>
-                            <div class="project-meta-detailed">
-                                <span>2024</span>
-                                <span>•</span>
-                                <span class="project-status-detailed">Paused</span>
-                            </div>
-                        </div>
-                        <p class="project-description-detailed">Privacy-first, offline-ready personal finance tracker with PWA capabilities, comprehensive income/expense logging, and intelligent budget planning.</p>
-                        <div class="project-tags-detailed">
-                            <span class="tag-detailed">PWA</span>
-                            <span class="tag-detailed">Finance</span>
-                            <span class="tag-detailed">Privacy</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Cine-Mon -->
-                <a href="projects/cine-mon.html" class="project-card-detailed">
-                    <div class="project-image-detailed">
-                        <img src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754071473/gzcuuvumg3uosod84jlw.png" alt="Cine-Mon">
-                    </div>
-                    <div class="project-content-detailed">
-                        <div class="project-header-detailed">
-                            <h3 class="project-title-detailed">Cine-Mon</h3>
-                            <div class="project-meta-detailed">
-                                <span>2025</span>
-                                <span>•</span>
-                                <span class="project-status-detailed">Completed</span>
-                            </div>
-                        </div>
-                        <p class="project-description-detailed">Local-first movie and series tracking app with personalized 'Spotlights' and 'Vaults', plus advanced Canvas board for storyboarding.</p>
-                        <div class="project-tags-detailed">
-                            <span class="tag-detailed">Media</span>
-                            <span class="tag-detailed">Canvas</span>
-                            <span class="tag-detailed">Local-first</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Mama Fua Platform -->
-                <a href="projects/mama-fua-platform.html" class="project-card-detailed">
-                    <div class="project-image-detailed">
-                        <img src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754071489/ifkw9yzuzipv8of0vygg.png" alt="Mama Fua Platform">
-                    </div>
-                    <div class="project-content-detailed">
-                        <div class="project-header-detailed">
-                            <h3 class="project-title-detailed">Mama Fua Platform</h3>
-                            <div class="project-meta-detailed">
-                                <span>2025</span>
-                                <span>•</span>
-                                <span class="project-status-detailed">In Development</span>
-                            </div>
-                        </div>
-                        <p class="project-description-detailed">On-demand service network for laundry services using Uber-like model with white-label system supporting individual branding and payment routing.</p>
-                        <div class="project-tags-detailed">
-                            <span class="tag-detailed">Next.js</span>
-                            <span class="tag-detailed">Firebase</span>
-                            <span class="tag-detailed">DPO API</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- 🎂 Mumira's Cakes - Because who doesn't love cake? (And now you can order it online!) -->
-                <a href="projects/mumiras-cakes.html" class="project-card-detailed">
-                    <div class="project-image-detailed">
-                        <img src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754071478/v98jxqqvrqgsy4ycfsbn.png" alt="Mumira's Cakes">
-                    </div>
-                    <div class="project-content-detailed">
-                        <div class="project-header-detailed">
-                            <h3 class="project-title-detailed">Mumira's Cakes</h3>
-                            <div class="project-meta-detailed">
-                                <span>2025</span>
-                                <span>•</span>
-                                <span class="project-status-detailed">In Development</span>
-                            </div>
-                        </div>
-                        <p class="project-description-detailed">Comprehensive e-commerce platform for custom cake business with cake customization interface, order management system, and beautiful gallery design.</p>
-                        <div class="project-tags-detailed">
-                            <span class="tag-detailed">React</span>
-                            <span class="tag-detailed">Next.js</span>
-                            <span class="tag-detailed">E-commerce</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- VerceHost -->
-                <a href="projects/vercehost.html" class="project-card-detailed">
-                    <div class="project-image-detailed">
-                        <img src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754073154/oahp2jtkjmxzorlfycvx.png" alt="VerceHost">
-                    </div>
-                    <div class="project-content-detailed">
-                        <div class="project-header-detailed">
-                            <h3 class="project-title-detailed">VerceHost</h3>
-                            <div class="project-meta-detailed">
-                                <span>2025</span>
-                                <span>•</span>
-                                <span class="project-status-detailed">In Development</span>
-                            </div>
-                        </div>
-                        <p class="project-description-detailed">Personal dashboard for monitoring app deployments and domain statuses in one place, ideal for freelance developers and solo builders.</p>
-                        <div class="project-tags-detailed">
-                            <span class="tag-detailed">React</span>
-                            <span class="tag-detailed">Vercel API</span>
-                            <span class="tag-detailed">Dashboard</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- TaskWise -->
-                <a href="projects/taskwise.html" class="project-card-detailed">
-                    <div class="project-image-detailed">
-                        <img src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754071470/cbzpetmcbbpi27hwbmlq.png" alt="TaskWise">
-                    </div>
-                    <div class="project-content-detailed">
-                        <div class="project-header-detailed">
-                            <h3 class="project-title-detailed">TaskWise</h3>
-                            <div class="project-meta-detailed">
-                                <span>2025</span>
-                                <span>•</span>
-                                <span class="project-status-detailed">Ongoing</span>
-                            </div>
-                        </div>
-                        <p class="project-description-detailed">AI-powered productivity app with NLP for task parsing, speech-to-text, and multiple visualization formats including Kanban and Mind Maps.</p>
-                        <div class="project-tags-detailed">
-                            <span class="tag-detailed">React</span>
-                            <span class="tag-detailed">AI</span>
-                            <span class="tag-detailed">NLP</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- TinyTasks -->
-                <a href="projects/tinytasks.html" class="project-card-detailed">
-                    <div class="project-image-detailed">
-                        <img src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754073153/hyduqfwrn6bzeweoo61v.png" alt="TinyTasks">
-                    </div>
-                    <div class="project-content-detailed">
-                        <div class="project-header-detailed">
-                            <h3 class="project-title-detailed">TinyTasks</h3>
-                            <div class="project-meta-detailed">
-                                <span>2024</span>
-                                <span>•</span>
-                                <span class="project-status-detailed">In Development</span>
-                            </div>
-                        </div>
-                        <p class="project-description-detailed">Focused, distraction-free environment for completing small but critical tasks with minimalist design and one-task-at-a-time interface.</p>
-                        <div class="project-tags-detailed">
-                            <span class="tag-detailed">React</span>
-                            <span class="tag-detailed">Minimalist</span>
-                            <span class="tag-detailed">Focus</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Alliance Movers App -->
-                <a href="projects/alliance-movers-app.html" class="project-card-detailed">
-                    <div class="project-image-detailed">
-                        <img src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754073153/werpymxvknxsl0xw5szx.png" alt="Alliance Movers App">
-                    </div>
-                    <div class="project-content-detailed">
-                        <div class="project-header-detailed">
-                            <h3 class="project-title-detailed">Alliance Movers App</h3>
-                            <div class="project-meta-detailed">
-                                <span>2025</span>
-                                <span>•</span>
-                                <span class="project-status-detailed">In Development</span>
-                            </div>
-                        </div>
-                        <p class="project-description-detailed">Client and staff app for moving company with embedded video onboarding, booking management, and communication features.</p>
-                        <div class="project-tags-detailed">
-                            <span class="tag-detailed">Next.js</span>
-                            <span class="tag-detailed">Firebase</span>
-                            <span class="tag-detailed">Video</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Supreme Imprints Art Portfolio -->
-                <a href="projects/supreme-imprints-art-portfolio.html" class="project-card-detailed">
-                    <div class="project-image-detailed">
-                        <img src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754071490/dzrdkejx1ht3amx0sk4j.png" alt="Supreme Imprints Art Portfolio">
-                    </div>
-                    <div class="project-content-detailed">
-                        <div class="project-header-detailed">
-                            <h3 class="project-title-detailed">Supreme Imprints Art Portfolio</h3>
-                            <div class="project-meta-detailed">
-                                <span>2024</span>
-                                <span>•</span>
-                                <span class="project-status-detailed">In Development</span>
-                            </div>
-                        </div>
-                        <p class="project-description-detailed">Portfolio website for showcasing custom artworks, designs, and merch with clean, client-friendly format and gallery structure.</p>
-                        <div class="project-tags-detailed">
-                            <span class="tag-detailed">Framer</span>
-                            <span class="tag-detailed">Portfolio</span>
-                            <span class="tag-detailed">Art</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Household Constitution aka Nation.OS -->
-                <a href="projects/household-constitution.html" class="project-card-detailed">
-                    <div class="project-image-detailed">
-                        <img src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754073153/lx27tmo0zrnmj28ogtcq.png" alt="Nation.OS">
-                    </div>
-                    <div class="project-content-detailed">
-                        <div class="project-header-detailed">
-                            <h3 class="project-title-detailed">Nation.OS</h3>
-                            <div class="project-meta-detailed">
-                                <span>2025</span>
-                                <span>•</span>
-                                <span class="project-status-detailed">In Development</span>
-                            </div>
-                        </div>
-                        <p class="project-description-detailed">Personal governance system treating life as a self-governed entity with structure, rules, budgeting, values, and operations documentation.</p>
-                        <div class="project-tags-detailed">
-                            <span class="tag-detailed">Markdown</span>
-                            <span class="tag-detailed">Notion</span>
-                            <span class="tag-detailed">Life OS</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+      <div class="container">
+        <div class="projects-header">
+          <h1 class="projects-title">All Projects</h1>
+          <p class="projects-subtitle">
+            A comprehensive collection of my web development and design work,
+            showcasing solutions for various challenges and industries.
+          </p>
         </div>
+
+        <div class="back-to-home">
+          <a href="index.html" class="btn btn-secondary">← Back to Home</a>
+        </div>
+
+        <div class="all-projects-grid">
+          <!-- Zellow Enterprises -->
+          <a
+            href="projects/zellow-enterprises.html"
+            class="project-card-detailed"
+          >
+            <div class="project-image-detailed">
+              <img
+                src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1753043502/wgwxd1qjbzmld0o6mdyi.png"
+                alt="Zellow Enterprises"
+              />
+            </div>
+            <div class="project-content-detailed">
+              <div class="project-header-detailed">
+                <h3 class="project-title-detailed">Zellow Enterprises</h3>
+                <div class="project-meta-detailed">
+                  <span>2025</span>
+                  <span>•</span>
+                  <span class="project-status-detailed">Completed</span>
+                </div>
+              </div>
+              <p class="project-description-detailed">
+                A personalized gifting platform that lets
+                customers create unique gifts by customization. <br>
+                Behind the scenes, it runs on a full operations system with tools for managing clients, inventory,
+                dispatch, finance, and extensive Product Customization.
+              </p>
+              <div class="project-tags-detailed">
+                <span class="tag-detailed">Next.js</span>
+                <span class="tag-detailed">Firebase</span>
+                <span class="tag-detailed">MPESA API</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- DomestiQ -->
+          <a href="projects/domestiq.html" class="project-card-detailed">
+            <div class="project-image-detailed">
+              <img
+                src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754073152/whxvcbsni2qpl0xw2ywu.png"
+                alt="DomestiQ"
+              />
+            </div>
+            <div class="project-content-detailed">
+              <div class="project-header-detailed">
+                <h3 class="project-title-detailed">DomestiQ</h3>
+                <div class="project-meta-detailed">
+                  <span>2025</span>
+                  <span>•</span>
+                  <span class="project-status-detailed">In Development</span>
+                </div>
+              </div>
+              <p class="project-description-detailed">
+                React-based household inventory manager with interactive charts,
+                restocking budgets, and receipt image processing for smart home
+                management.
+              </p>
+              <div class="project-tags-detailed">
+                <span class="tag-detailed">React</span>
+                <span class="tag-detailed">TailwindCSS</span>
+                <span class="tag-detailed">Charts</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Investa -->
+          <a href="projects/investa.html" class="project-card-detailed">
+            <div class="project-image-detailed">
+              <img
+                src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754075198/cuu7r6pudjo4c8cl98kn.png"
+                alt="Investa"
+              />
+            </div>
+            <div class="project-content-detailed">
+              <div class="project-header-detailed">
+                <h3 class="project-title-detailed">Investa</h3>
+                <div class="project-meta-detailed">
+                  <span>2024</span>
+                  <span>•</span>
+                  <span class="project-status-detailed">Paused</span>
+                </div>
+              </div>
+              <p class="project-description-detailed">
+                Privacy-first, offline-ready personal finance tracker with PWA
+                capabilities, comprehensive income/expense logging, and
+                intelligent budget planning.
+              </p>
+              <div class="project-tags-detailed">
+                <span class="tag-detailed">PWA</span>
+                <span class="tag-detailed">Finance</span>
+                <span class="tag-detailed">Privacy</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Cine-Mon -->
+          <a href="projects/cine-mon.html" class="project-card-detailed">
+            <div class="project-image-detailed">
+              <img
+                src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754071473/gzcuuvumg3uosod84jlw.png"
+                alt="Cine-Mon"
+              />
+            </div>
+            <div class="project-content-detailed">
+              <div class="project-header-detailed">
+                <h3 class="project-title-detailed">Cine-Mon</h3>
+                <div class="project-meta-detailed">
+                  <span>2025</span>
+                  <span>•</span>
+                  <span class="project-status-detailed">Completed</span>
+                </div>
+              </div>
+              <p class="project-description-detailed">
+                Local-first movie and series tracking app with personalized
+                'Spotlights' and 'Vaults', plus advanced Canvas board for
+                storyboarding.
+              </p>
+              <div class="project-tags-detailed">
+                <span class="tag-detailed">Media</span>
+                <span class="tag-detailed">Canvas</span>
+                <span class="tag-detailed">Local-first</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Mama Fua Platform -->
+          <a
+            href="projects/mama-fua-platform.html"
+            class="project-card-detailed"
+          >
+            <div class="project-image-detailed">
+              <img
+                src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754071489/ifkw9yzuzipv8of0vygg.png"
+                alt="Mama Fua Platform"
+              />
+            </div>
+            <div class="project-content-detailed">
+              <div class="project-header-detailed">
+                <h3 class="project-title-detailed">Mama Fua Platform</h3>
+                <div class="project-meta-detailed">
+                  <span>2025</span>
+                  <span>•</span>
+                  <span class="project-status-detailed">In Development</span>
+                </div>
+              </div>
+              <p class="project-description-detailed">
+                On-demand service network for laundry services using Uber-like
+                model with white-label system supporting individual branding and
+                payment routing.
+              </p>
+              <div class="project-tags-detailed">
+                <span class="tag-detailed">Next.js</span>
+                <span class="tag-detailed">Firebase</span>
+                <span class="tag-detailed">DPO API</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- 🎂 Mumira's Cakes - Because who doesn't love cake? (And now you can order it online!) -->
+          <a href="projects/mumiras-cakes.html" class="project-card-detailed">
+            <div class="project-image-detailed">
+              <img
+                src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754071478/v98jxqqvrqgsy4ycfsbn.png"
+                alt="Mumira's Cakes"
+              />
+            </div>
+            <div class="project-content-detailed">
+              <div class="project-header-detailed">
+                <h3 class="project-title-detailed">Mumira's Cakes</h3>
+                <div class="project-meta-detailed">
+                  <span>2025</span>
+                  <span>•</span>
+                  <span class="project-status-detailed">In Development</span>
+                </div>
+              </div>
+              <p class="project-description-detailed">
+                Comprehensive e-commerce platform for custom cake business with
+                cake customization interface, order management system, and
+                beautiful gallery design.
+              </p>
+              <div class="project-tags-detailed">
+                <span class="tag-detailed">React</span>
+                <span class="tag-detailed">Next.js</span>
+                <span class="tag-detailed">E-commerce</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- VerceHost -->
+          <a href="projects/vercehost.html" class="project-card-detailed">
+            <div class="project-image-detailed">
+              <img
+                src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754073154/oahp2jtkjmxzorlfycvx.png"
+                alt="VerceHost"
+              />
+            </div>
+            <div class="project-content-detailed">
+              <div class="project-header-detailed">
+                <h3 class="project-title-detailed">VerceHost</h3>
+                <div class="project-meta-detailed">
+                  <span>2025</span>
+                  <span>•</span>
+                  <span class="project-status-detailed">In Development</span>
+                </div>
+              </div>
+              <p class="project-description-detailed">
+                Personal dashboard for monitoring app deployments and domain
+                statuses in one place, ideal for freelance developers and solo
+                builders.
+              </p>
+              <div class="project-tags-detailed">
+                <span class="tag-detailed">React</span>
+                <span class="tag-detailed">Vercel API</span>
+                <span class="tag-detailed">Dashboard</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- TaskWise -->
+          <a href="projects/taskwise.html" class="project-card-detailed">
+            <div class="project-image-detailed">
+              <img
+                src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754071470/cbzpetmcbbpi27hwbmlq.png"
+                alt="TaskWise"
+              />
+            </div>
+            <div class="project-content-detailed">
+              <div class="project-header-detailed">
+                <h3 class="project-title-detailed">TaskWise</h3>
+                <div class="project-meta-detailed">
+                  <span>2025</span>
+                  <span>•</span>
+                  <span class="project-status-detailed">Ongoing</span>
+                </div>
+              </div>
+              <p class="project-description-detailed">
+                AI-powered productivity app with NLP for task parsing,
+                speech-to-text, and multiple visualization formats including
+                Kanban and Mind Maps.
+              </p>
+              <div class="project-tags-detailed">
+                <span class="tag-detailed">React</span>
+                <span class="tag-detailed">AI</span>
+                <span class="tag-detailed">NLP</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- TinyTasks -->
+          <a href="projects/tinytasks.html" class="project-card-detailed">
+            <div class="project-image-detailed">
+              <img
+                src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754073153/hyduqfwrn6bzeweoo61v.png"
+                alt="TinyTasks"
+              />
+            </div>
+            <div class="project-content-detailed">
+              <div class="project-header-detailed">
+                <h3 class="project-title-detailed">TinyTasks</h3>
+                <div class="project-meta-detailed">
+                  <span>2024</span>
+                  <span>•</span>
+                  <span class="project-status-detailed">In Development</span>
+                </div>
+              </div>
+              <p class="project-description-detailed">
+                Focused, distraction-free environment for completing small but
+                critical tasks with minimalist design and one-task-at-a-time
+                interface.
+              </p>
+              <div class="project-tags-detailed">
+                <span class="tag-detailed">React</span>
+                <span class="tag-detailed">Minimalist</span>
+                <span class="tag-detailed">Focus</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Alliance Movers App -->
+          <a
+            href="projects/alliance-movers-app.html"
+            class="project-card-detailed"
+          >
+            <div class="project-image-detailed">
+              <img
+                src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754073153/werpymxvknxsl0xw5szx.png"
+                alt="Alliance Movers App"
+              />
+            </div>
+            <div class="project-content-detailed">
+              <div class="project-header-detailed">
+                <h3 class="project-title-detailed">Alliance Movers App</h3>
+                <div class="project-meta-detailed">
+                  <span>2025</span>
+                  <span>•</span>
+                  <span class="project-status-detailed">In Development</span>
+                </div>
+              </div>
+              <p class="project-description-detailed">
+                Client and staff app for moving company with embedded video
+                onboarding, booking management, and communication features.
+              </p>
+              <div class="project-tags-detailed">
+                <span class="tag-detailed">Next.js</span>
+                <span class="tag-detailed">Firebase</span>
+                <span class="tag-detailed">Video</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Supreme Imprints Art Portfolio -->
+          <a
+            href="projects/supreme-imprints-art-portfolio.html"
+            class="project-card-detailed"
+          >
+            <div class="project-image-detailed">
+              <img
+                src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754071490/dzrdkejx1ht3amx0sk4j.png"
+                alt="Supreme Imprints Art Portfolio"
+              />
+            </div>
+            <div class="project-content-detailed">
+              <div class="project-header-detailed">
+                <h3 class="project-title-detailed">
+                  Supreme Imprints Art Portfolio
+                </h3>
+                <div class="project-meta-detailed">
+                  <span>2024</span>
+                  <span>•</span>
+                  <span class="project-status-detailed">In Development</span>
+                </div>
+              </div>
+              <p class="project-description-detailed">
+                Portfolio website for showcasing custom artworks, designs, and
+                merch with clean, client-friendly format and gallery structure.
+              </p>
+              <div class="project-tags-detailed">
+                <span class="tag-detailed">Framer</span>
+                <span class="tag-detailed">Portfolio</span>
+                <span class="tag-detailed">Art</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Household Constitution aka Nation.OS -->
+          <a
+            href="projects/household-constitution.html"
+            class="project-card-detailed"
+          >
+            <div class="project-image-detailed">
+              <img
+                src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1754073153/lx27tmo0zrnmj28ogtcq.png"
+                alt="Nation.OS"
+              />
+            </div>
+            <div class="project-content-detailed">
+              <div class="project-header-detailed">
+                <h3 class="project-title-detailed">Nation.OS</h3>
+                <div class="project-meta-detailed">
+                  <span>2025</span>
+                  <span>•</span>
+                  <span class="project-status-detailed">In Development</span>
+                </div>
+              </div>
+              <p class="project-description-detailed">
+                Personal governance system treating life as a self-governed
+                entity with structure, rules, budgeting, values, and operations
+                documentation.
+              </p>
+              <div class="project-tags-detailed">
+                <span class="tag-detailed">Markdown</span>
+                <span class="tag-detailed">Notion</span>
+                <span class="tag-detailed">Life OS</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#projects">Projects</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Education & Interests</h4>
-                    <ul>
-                        <li><a href="index.html#education">Educational Background</a></li>
-                        <li><a href="index.html#interests">Interests & Passions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="https://x.com/supremeimprints" target="_blank">Twitter</a></li>
-                        <li><a href="https://github.com/geoffreymagana" target="_blank">GitHub</a></li>
-                        <li><a href="https://www.linkedin.com/in/geoffrey-magana-15a8b11b8" target="_blank">LinkedIn</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li><a href="mailto:geoffreymagana21@gmail.com">Email</a></li>
-                        <li><a href="tel:0742663614">Phone</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Geoffrey Magana Gitau. All rights reserved.</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="index.html#projects">Projects</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Education & Interests</h4>
+            <ul>
+              <li><a href="index.html#education">Educational Background</a></li>
+              <li><a href="index.html#interests">Interests & Passions</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <ul>
+              <li>
+                <a href="https://x.com/supremeimprints" target="_blank"
+                  >Twitter</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/geoffreymagana" target="_blank"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/geoffrey-magana-15a8b11b8"
+                  target="_blank"
+                  >LinkedIn</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <ul>
+              <li><a href="mailto:geoffreymagana21@gmail.com">Email</a></li>
+              <li><a href="tel:0742663614">Phone</a></li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Geoffrey Magana Gitau. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
-</body>
-</html> 
+  </body>
+</html>

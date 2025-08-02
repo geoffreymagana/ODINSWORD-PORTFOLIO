@@ -1,25 +1,44 @@
+/* ===== STYLESHEET FOR ODINSWORD PORTFOLIO ===== */
+/* This file contains all the styles for the My portfolio website, hereby dubbed with my call sign "OdinSword".
+   It includes the base styles, layout, typography, buttons, navigation, sections,
+   and responsive design. The goal is to create a clean, modern, and user-friendly
+   interface that showcases my projects and personal information effectively.
+   
+   
+   For clarity, I will attempt to use simple notes so that you can simply follow along on my design justification 
+   and what some of the styling rules I've decided to use actually mean, to the best of my ability.
+
+   I'll use simple notes like this does that or that, so you can follow along with my design choices.
+   
+   */
+
 /* ===== RESET AND BASE STYLES ===== */
+/* This removes default browser margin/padding and uses border-box so width/height include borders and padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* This enables smooth scrolling for anchor links (like sections... #about) */
 html {
   scroll-behavior: smooth;
 }
 
+/* This sets main font, text color, and background for the whole page.
+   overflow-x: hidden prevents horizontal scrollbars from accidental overflow. */
 body {
   font-family: "Space Grotesk", sans-serif;
   line-height: 1.6;
   color: #0a0a0a;
-  background-color: #fafafa; /* Off-white background */
+  background-color: #fafafa;
   overflow-x: hidden;
 }
 
 /* ===== CSS VARIABLES FOR COLORS ===== */
+/* This defines color palette as CSS variables for easy reuse and theme changes */
 :root {
-  --background: #fafafa; /* Off-white background */
+  --background: #fafafa;
   --foreground: #0a0a0a;
   --primary: #a020f0;
   --primary-light: #b44ff0;
@@ -33,12 +52,17 @@ body {
 }
 
 /* ===== CONTAINER LAYOUT ===== */
+/* This centers content and limits width for readability. 
+Padding adds space on small screens. 
+Since most users or visitors definitely use mobile phones rather than desktops */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
+/* This increases padding on tablet and larger screens */
 @media (min-width: 768px) {
   .container {
     padding: 0 2rem;
@@ -46,6 +70,7 @@ body {
 }
 
 /* ===== TYPOGRAPHY ===== */
+/* This styles section titles: large, bold, and coloured for emphasis */
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -53,6 +78,7 @@ body {
   color: var(--foreground);
 }
 
+/* This styles subtitles: smaller, muted color, centered, max width for line length */
 .section-subtitle {
   font-size: 1.125rem;
   color: var(--muted);
@@ -60,6 +86,7 @@ body {
   margin: 0 auto;
 }
 
+/* This increases section title size on tablet and larger screens */
 @media (min-width: 768px) {
   .section-title {
     font-size: 3rem;
@@ -67,6 +94,7 @@ body {
 }
 
 /* ===== BUTTON STYLES ===== */
+/* This is base class for all buttons: inline-block so width & height can be set, pointer for hover state, rounded corners */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -79,18 +107,21 @@ body {
   font-size: 1rem;
 }
 
+/* This styles the primary buttons: purple background, white text, shadow for depth */
 .btn-primary {
   background: var(--primary);
   color: white;
   box-shadow: 0 4px 14px var(--shadow);
 }
 
+/* This creates hover effect for primary buttons: lighter color, larger shadow, subtle lift */
 .btn-primary:hover {
   background: var(--primary-light);
   box-shadow: 0 6px 20px var(--shadow-hover);
-  transform: translateY(-2px);
+  transform: translateY(-2px); /* subtle lift on hover */
 }
 
+/* This styles secondary buttons: outlined, purple text, light background */
 .btn-secondary {
   background: rgba(160, 32, 240, 0.1);
   color: var(--primary);
@@ -98,6 +129,7 @@ body {
   box-shadow: 0 2px 8px var(--shadow);
 }
 
+/* This creates hover effect for secondary buttons: fills with primary color */
 .btn-secondary:hover {
   background: var(--primary);
   color: white;
@@ -105,12 +137,13 @@ body {
   transform: translateY(-2px);
 }
 
-/* ===== NAVIGATION - GLASS EFFECT ===== */
+/* ===== NAVIGATION - BLURRED GLASS EFFECT ===== */
+/* This creates fixed navigation at top with glass blur effect and subtle border for separation */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(250, 250, 250, 0.8); /* Glass effect with off-white */
+  background: rgba(250, 250, 250, 0.8);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   z-index: 1000;
@@ -119,6 +152,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* This uses flex to space logo, menu, and toggle horizontally */
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -128,6 +162,9 @@ body {
   align-items: center;
 }
 
+/* This styles the brand logo: large, bold, purple link */
+/* I simply call mine "Home" */
+
 .nav-logo a {
   font-size: 1.5rem;
   font-weight: 700;
@@ -135,12 +172,14 @@ body {
   text-decoration: none;
 }
 
+/* This creates horizontal menu with gap for spacing and no bullets */
 .nav-menu {
   display: flex;
   list-style: none;
   gap: 2rem;
 }
 
+/* This styles menu links: dark text, bold, color transition on hover */
 .nav-menu a {
   color: var(--foreground);
   text-decoration: none;
@@ -148,16 +187,19 @@ body {
   transition: color 0.3s ease;
 }
 
+/* This changes menu link color on hover */
 .nav-menu a:hover {
   color: var(--primary);
 }
 
+/* This creates hamburger icon for mobile, hidden on desktop */
 .nav-toggle {
   display: none;
   flex-direction: column;
   cursor: pointer;
 }
 
+/* This styles hamburger icon lines */
 .nav-toggle span {
   width: 25px;
   height: 3px;
@@ -166,7 +208,8 @@ body {
   transition: 0.3s;
 }
 
-/* ===== MOBILE NAVIGATION - PURE CSS ===== */
+/* ===== MOBILE NAVIGATION ===== */
+/* On small screens, this makes nav-menu a vertical overlay, hidden by default (left:-100%) */
 @media (max-width: 768px) {
   .nav-menu {
     position: fixed;
@@ -182,34 +225,40 @@ body {
     z-index: 999;
   }
 
+  /* This shows hamburger icon on mobile */
   .nav-toggle {
     display: flex;
     cursor: pointer;
   }
 
-  /* Pure CSS mobile menu using checkbox hack, because I'm lazy, but it doesn't work */
+  /* This hides checkbox used for toggling menu (not functional here, but shows intent) */
   .nav-toggle input[type="checkbox"] {
     display: none;
   }
 
+  /* This slides menu into view when checkbox is checked */
   .nav-toggle input[type="checkbox"]:checked ~ .nav-menu {
     left: 0;
   }
 
+  /* This rotates first hamburger line when menu is open */
   .nav-toggle input[type="checkbox"]:checked ~ .nav-toggle span:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
   }
 
+  /* This hides middle hamburger line when menu is open */
   .nav-toggle input[type="checkbox"]:checked ~ .nav-toggle span:nth-child(2) {
     opacity: 0;
   }
 
+  /* This rotates third hamburger line when menu is open */
   .nav-toggle input[type="checkbox"]:checked ~ .nav-toggle span:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
   }
 }
 
 /* ===== HERO SECTION - DOTTED BACKGROUND ===== */
+/* This creates full viewport height hero section with flexbox centering content vertically and horizontally */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -221,6 +270,7 @@ body {
   background: var(--background);
 }
 
+/* This fills hero section with dotted pattern using radial-gradient */
 .hero-background {
   position: absolute;
   top: 0;
@@ -236,6 +286,7 @@ body {
   z-index: 1;
 }
 
+/* This ensures hero content appears above background with max-width for readability */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -243,6 +294,7 @@ body {
   margin: 0 auto;
 }
 
+/* This styles main hero heading: very large, bold, centered */
 .hero-title {
   font-size: 4rem;
   font-weight: 700;
@@ -250,12 +302,14 @@ body {
   color: var(--foreground);
 }
 
+/* This styles hero subtitle with muted color */
 .hero-subtitle {
   font-size: 1.5rem;
   color: var(--muted);
   margin-bottom: 1.5rem;
 }
 
+/* This styles hero description with limited width for readability */
 .hero-description {
   font-size: 1.125rem;
   color: var(--muted);
@@ -265,16 +319,17 @@ body {
   margin-right: auto;
 }
 
+/* This increases hero title size on tablet screens */
 @media (min-width: 768px) {
   .hero-title {
     font-size: 6rem;
   }
-
   .hero-subtitle {
     font-size: 1.75rem;
   }
 }
 
+/* This further increases hero title size on desktop screens */
 @media (min-width: 1024px) {
   .hero-title {
     font-size: 7rem;
@@ -282,6 +337,7 @@ body {
 }
 
 /* ===== TECH STACK - FLOATING POSITIONING ===== */
+/* This fills hero section with floating tech tags, pointer-events:none so it doesn't block clicks */
 .tech-stack {
   position: absolute;
   top: 0;
@@ -292,6 +348,7 @@ body {
   pointer-events: none;
 }
 
+/* This creates floating tech tags with glass effect and animation */
 .tech-item {
   position: absolute;
   background: rgba(160, 32, 240, 0.1);
@@ -310,6 +367,7 @@ body {
   backdrop-filter: blur(5px);
 }
 
+/* These assign different animation delays to create a kinda staggered floating effect */
 .tech-item:nth-child(1) {
   --i: 1;
 }
@@ -335,14 +393,14 @@ body {
   --i: 8;
 }
 
-/* Hide tech stack on mobile */
+/* This hides floating tech stack on mobile... for clarity */
 @media (max-width: 768px) {
   .tech-stack {
     display: none;
   }
 }
 
-/* ===== ANIMATIONS ===== */
+/* This creates floating animation: moves tags up and down smoothly */
 @keyframes float {
   0%,
   100% {
@@ -354,12 +412,14 @@ body {
 }
 
 /* ===== ABOUT SECTION ===== */
+/* This adds vertical padding, light background, border on top for separation */
 .about {
   padding: 5rem 0;
   background: var(--background);
   border-top: 1px solid var(--border);
 }
 
+/* This creates CSS grid for two columns (text and image), but stacks on mobile */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -368,6 +428,7 @@ body {
   margin-bottom: 4rem;
 }
 
+/* This creates two-column layout on tablet and larger screens */
 @media (min-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr 1fr;
@@ -375,6 +436,7 @@ body {
   }
 }
 
+/* This styles about text: slightly larger, muted color, more line spacing for readability */
 .about-text {
   font-size: 1.125rem;
   color: var(--muted);
@@ -383,49 +445,49 @@ body {
 }
 
 /* ===== ABOUT DETAILS ===== */
+/* This adds extra margin above details section */
 .about-details {
   margin-top: 2rem;
 }
-
 .about-section {
   margin-bottom: 2rem;
 }
-
 .about-section h3 {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: var(--foreground);
 }
-
 .about-section p {
   color: var(--muted);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
-
 .cv-download {
   margin-top: 1rem;
 }
 
+/* This styles my profile image as a perfect circle with border and shadow */
 .profile-image {
   width: 100%;
   max-width: 300px;
   height: 300px;
-  border-radius: 50%;
+  border-radius: 50%; /* This makes it a perfect circle */
   border: 4px solid rgba(160, 32, 240, 0.2);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
-  display: block;
-  object-fit: cover;
-  object-position: center;
+  display: block; /* This enables me to center it with margin: 0 auto */
+  object-fit: cover; /* This fills the circle, cropping if needed */
+  object-position: center; /* This centers the image or objetc inside the circle */
 }
 
 /* ===== PHILOSOPHY SECTION ===== */
+/* This adds margin above philosophy section */
 .philosophy-section {
   margin-top: 4rem;
 }
 
+/* This styles philosophy section title */
 .philosophy-title {
   font-size: 2rem;
   font-weight: 700;
@@ -433,24 +495,28 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* This styles philosophy section subtitle */
 .philosophy-subtitle {
   text-align: center;
   color: var(--muted);
   margin-bottom: 3rem;
 }
 
+/* This creates single column grid for philosophy cards on mobile */
 .philosophy-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
 }
 
+/* This creates three-column layout for philosophy cards on tablet and larger */
 @media (min-width: 768px) {
   .philosophy-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
+/* This styles philosophy cards with hover effects */
 .philosophy-card {
   background: var(--card);
   padding: 2rem;
@@ -460,16 +526,19 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* This creates lift effect on hover for philosophy cards */
 .philosophy-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+/* This styles large icons in philosophy cards */
 .philosophy-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
+/* This styles philosophy card titles */
 .philosophy-card h4 {
   font-size: 1.25rem;
   font-weight: 600;
@@ -477,23 +546,27 @@ body {
   color: var(--foreground);
 }
 
+/* This styles philosophy card text */
 .philosophy-card p {
   color: var(--muted);
   line-height: 1.6;
 }
 
 /* ===== EDUCATION SECTION ===== */
+/* This styles education section with background and padding */
 .education {
   padding: 5rem 0;
   background: var(--card);
   border-top: 1px solid var(--border);
 }
 
+/* This limits width of education content */
 .education-content {
   max-width: 800px;
   margin: 0 auto;
 }
 
+/* This styles education info card with background and shadow */
 .education-info {
   background: var(--background);
   padding: 2rem;
@@ -501,6 +574,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* This styles education degree title */
 .education-info h3 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -508,6 +582,7 @@ body {
   color: var(--foreground);
 }
 
+/* This styles institution name with primary color */
 .institution {
   font-size: 1.125rem;
   font-weight: 500;
@@ -515,12 +590,14 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* This styles duration with muted text */
 .duration {
   font-size: 1rem;
   color: var(--muted);
   margin-bottom: 1rem;
 }
 
+/* This styles education description */
 .description {
   font-size: 1.125rem;
   color: var(--muted);
@@ -528,22 +605,26 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* This adds margin to CV download button */
 .cv-download {
   margin-top: 1rem;
 }
 
 /* ===== INTERESTS SECTION ===== */
+/* This styles interests section with padding and background */
 .interests {
   padding: 5rem 0;
   background: var(--background);
   border-top: 1px solid var(--border);
 }
 
+/* This limits width of interests content */
 .interests-content {
   max-width: 800px;
   margin: 0 auto;
 }
 
+/* This styles interests text card */
 .interests-text {
   background: var(--card);
   padding: 2rem;
@@ -552,12 +633,14 @@ body {
   margin-bottom: 2rem;
 }
 
+/* This styles interests text paragraphs */
 .interests-text p {
   font-size: 1.125rem;
   color: var(--muted);
   line-height: 1.8;
 }
 
+/* This styles interests list card */
 .interests-list {
   background: var(--card);
   padding: 2rem;
@@ -565,6 +648,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* This styles interests list title */
 .interests-list h3 {
   font-size: 1.25rem;
   font-weight: 600;
@@ -572,11 +656,13 @@ body {
   color: var(--foreground);
 }
 
+/* This removes default list styling */
 .interests-list ul {
   list-style: none;
   padding: 0;
 }
 
+/* This styles interest list items with custom bullet points */
 .interests-list li {
   color: var(--muted);
   margin-bottom: 0.75rem;
@@ -586,6 +672,7 @@ body {
   line-height: 1.6;
 }
 
+/* This creates custom purple bullet points for interest items */
 .interests-list li::before {
   content: "•";
   color: var(--primary);
@@ -595,17 +682,20 @@ body {
 }
 
 /* ===== LANGUAGES SECTION ===== */
+/* This styles languages section with padding and background */
 .languages {
   padding: 5rem 0;
   background: var(--background);
   border-top: 1px solid var(--border);
 }
 
+/* This limits width of languages content */
 .languages-content {
   max-width: 800px;
   margin: 0 auto;
 }
 
+/* This styles languages text card */
 .languages-text {
   background: var(--card);
   padding: 2rem;
@@ -614,12 +704,14 @@ body {
   margin-bottom: 2rem;
 }
 
+/* This styles languages text paragraphs */
 .languages-text p {
   font-size: 1.125rem;
   color: var(--muted);
   line-height: 1.8;
 }
 
+/* This styles languages list card */
 .languages-list {
   background: var(--card);
   padding: 2rem;
@@ -627,6 +719,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* This styles languages list title */
 .languages-list h3 {
   font-size: 1.25rem;
   font-weight: 600;
@@ -634,11 +727,13 @@ body {
   color: var(--foreground);
 }
 
+/* This removes default list styling for languages */
 .languages-list ul {
   list-style: none;
   padding: 0;
 }
 
+/* This styles language list items with custom bullet points */
 .languages-list li {
   color: var(--muted);
   margin-bottom: 0.75rem;
@@ -648,6 +743,7 @@ body {
   line-height: 1.6;
 }
 
+/* This creates custom purple bullet points for language items */
 .languages-list li::before {
   content: "•";
   color: var(--primary);
@@ -657,17 +753,20 @@ body {
 }
 
 /* ===== PROJECTS SECTION ===== */
+/* This styles projects section with padding and background */
 .projects {
   padding: 5rem 0;
   background: var(--background);
 }
 
+/* This centers section header */
 .section-header {
   text-align: center;
   margin-bottom: 3rem;
 }
 
 /* ===== PROJECTS GRID ===== */
+/* This creates single column grid for project cards on mobile */
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -675,18 +774,21 @@ body {
   margin-bottom: 3rem;
 }
 
+/* This creates two-column layout for projects on tablet */
 @media (min-width: 768px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* This creates three-column layout for projects on desktop */
 @media (min-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
+/* This styles project cards with hover effects */
 .project-card {
   background: var(--card);
   border-radius: 1rem;
@@ -698,17 +800,20 @@ body {
   display: block;
 }
 
+/* This creates lift effect on hover for project cards */
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+/* This creates fixed height container for project images */
 .project-image {
   width: 100%;
   height: 200px;
   overflow: hidden;
 }
 
+/* This ensures project images fill container without distortion */
 .project-image img {
   width: 100%;
   height: 100%;
@@ -716,14 +821,17 @@ body {
   transition: transform 0.3s ease;
 }
 
+/* This creates zoom effect on project image hover */
 .project-card:hover .project-image img {
   transform: scale(1.05);
 }
 
+/* This styles project card content area */
 .project-content {
   padding: 1.5rem;
 }
 
+/* This styles project titles */
 .project-content h3 {
   font-size: 1.25rem;
   font-weight: 600;
@@ -731,18 +839,21 @@ body {
   color: var(--foreground);
 }
 
+/* This styles project descriptions */
 .project-content p {
   color: var(--muted);
   margin-bottom: 1rem;
   line-height: 1.6;
 }
 
+/* This creates horizontal layout for project tags */
 .project-tags {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
 }
 
+/* This styles individual project tags */
 .tag {
   background: rgba(160, 32, 240, 0.1);
   color: var(--primary);
@@ -752,17 +863,20 @@ body {
   font-weight: 500;
 }
 
+/* This centers "view all projects" button */
 .view-all-projects {
   text-align: center;
 }
 
 /* ===== CONTACT SECTION ===== */
+/* This styles contact section with padding and background */
 .contact {
   padding: 5rem 0;
   background: var(--background);
   border-top: 1px solid var(--border);
 }
 
+/* This creates single column grid for contact content on mobile */
 .contact-content {
   display: grid;
   grid-template-columns: 1fr;
@@ -771,12 +885,14 @@ body {
   margin: 0 auto;
 }
 
+/* This creates two-column layout for contact content on tablet and larger */
 @media (min-width: 768px) {
   .contact-content {
     grid-template-columns: 1fr 1fr;
   }
 }
 
+/* This styles contact info and form cards */
 .contact-info,
 .contact-form {
   background: var(--card);
@@ -785,6 +901,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* This styles contact section titles */
 .contact-info h3,
 .contact-form h3 {
   font-size: 1.25rem;
@@ -793,12 +910,14 @@ body {
   color: var(--foreground);
 }
 
+/* This styles contact info paragraphs */
 .contact-info p {
   color: var(--muted);
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
 }
 
+/* This creates horizontal layout for contact items */
 .contact-item {
   display: flex;
   align-items: center;
@@ -806,26 +925,31 @@ body {
   margin-bottom: 0.75rem;
 }
 
+/* This styles contact icons */
 .contact-icon {
   font-size: 1.125rem;
 }
 
+/* This styles contact links */
 .contact-item a {
   color: var(--primary);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
+/* This creates hover effect for contact links */
 .contact-item a:hover {
   color: var(--primary-light);
 }
 
+/* This creates horizontal layout for social links */
 .social-links {
   display: flex;
   gap: 1rem;
   margin-top: 1.5rem;
 }
 
+/* This styles individual social links */
 .social-link {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -838,16 +962,19 @@ body {
   font-size: 0.9rem;
 }
 
+/* This creates hover effect for social links */
 .social-link:hover {
   background: var(--primary);
   color: white;
 }
 
 /* ===== FORM STYLES ===== */
+/* This adds margin between form groups */
 .form-group {
   margin-bottom: 1rem;
 }
 
+/* This styles form labels */
 .form-group label {
   display: block;
   margin-bottom: 0.25rem;
@@ -856,6 +983,7 @@ body {
   font-size: 0.9rem;
 }
 
+/* This styles form inputs and textareas */
 .form-group input,
 .form-group textarea {
   width: 100%;
@@ -867,24 +995,28 @@ body {
   transition: border-color 0.3s ease;
 }
 
+/* This creates focus effect for form inputs */
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
 }
 
+/* This allows vertical resizing of textareas and sets minimum height */
 .form-group textarea {
   resize: vertical;
   min-height: 100px;
 }
 
 /* ===== FOOTER ===== */
+/* This styles footer with dark background and white text */
 .footer {
   background: var(--foreground);
   color: white;
   padding: 3rem 0 2rem;
 }
 
+/* This creates single column grid for footer content on mobile */
 .footer-content {
   display: grid;
   grid-template-columns: 1fr;
@@ -892,6 +1024,7 @@ body {
   margin-bottom: 2rem;
 }
 
+/* This creates four-column layout for footer content on tablet and larger */
 @media (min-width: 768px) {
   .footer-content {
     grid-template-columns: repeat(4, 1fr);
@@ -899,6 +1032,7 @@ body {
   }
 }
 
+/* This styles footer section titles */
 .footer-section h4 {
   font-size: 1.125rem;
   font-weight: 600;
@@ -906,70 +1040,84 @@ body {
   color: white;
 }
 
+/* This removes default list styling for footer lists */
 .footer-section ul {
   list-style: none;
   padding: 0;
 }
 
+/* This adds spacing between footer list items */
 .footer-section li {
   margin-bottom: 0.5rem;
 }
 
+/* This styles footer links with semi-transparent white */
 .footer-section a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
+/* This creates hover effect for footer links */
 .footer-section a:hover {
   color: white;
 }
 
+/* This styles footer bottom section with border separator */
 .footer-bottom {
   text-align: center;
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* This styles footer bottom text */
 .footer-bottom p {
   color: rgba(255, 255, 255, 0.8);
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
+/* This adjusts hero title size for very small screens */
 @media (max-width: 480px) {
   .hero-title {
     font-size: 3rem;
   }
 
+  /* This reduces section title size on small screens */
   .section-title {
     font-size: 2rem;
   }
 
+  /* This reduces container padding on small screens */
   .container {
     padding: 0 1rem;
   }
 }
 
 /* ===== UTILITY CLASSES ===== */
+/* This centers text content */
 .text-center {
   text-align: center;
 }
 
+/* This adds 1rem bottom margin */
 .mb-4 {
   margin-bottom: 1rem;
 }
 
+/* This adds 2rem bottom margin */
 .mb-8 {
   margin-bottom: 2rem;
 }
 
 /* ===== CONTACT PAGE STYLES ===== */
+/* This styles contact page header with extra top padding for fixed nav */
 .contact-header {
   padding: 8rem 0 4rem;
   background: var(--background);
   text-align: center;
 }
 
+/* This styles contact page main title */
 .contact-title {
   font-size: 3rem;
   font-weight: 700;
@@ -977,6 +1125,7 @@ body {
   color: var(--foreground);
 }
 
+/* This styles contact page subtitle with limited width */
 .contact-subtitle {
   font-size: 1.25rem;
   color: var(--muted);
@@ -984,11 +1133,13 @@ body {
   margin: 0 auto;
 }
 
+/* This styles contact page main content area */
 .contact-page {
   padding: 4rem 0;
   background: var(--background);
 }
 
+/* This creates single column grid for contact page content on mobile */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -996,12 +1147,14 @@ body {
   margin-bottom: 4rem;
 }
 
+/* This creates two-column layout for contact page on tablet and larger */
 @media (min-width: 768px) {
   .contact-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
+/* This styles contact page info and form cards */
 .contact-info-card,
 .contact-form-card {
   background: var(--card);
@@ -1010,6 +1163,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* This styles contact page card titles */
 .contact-info-card h2,
 .contact-form-card h2 {
   font-size: 1.75rem;
@@ -1018,15 +1172,18 @@ body {
   color: var(--foreground);
 }
 
+/* This styles contact page info text */
 .contact-info-card p {
   color: var(--muted);
   margin-bottom: 2rem;
 }
 
+/* This adds margin to contact details section */
 .contact-details {
   margin-bottom: 2rem;
 }
 
+/* This creates horizontal layout for contact page items */
 .contact-item {
   display: flex;
   align-items: flex-start;
@@ -1034,11 +1191,13 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* This styles contact page icons with larger size */
 .contact-icon {
   font-size: 1.5rem;
   flex-shrink: 0;
 }
 
+/* This styles contact page text content titles */
 .contact-text h3 {
   font-size: 1.125rem;
   font-weight: 600;
@@ -1046,6 +1205,7 @@ body {
   color: var(--foreground);
 }
 
+/* This styles contact page links and text */
 .contact-text a,
 .contact-text span {
   color: var(--muted);
@@ -1053,10 +1213,12 @@ body {
   transition: color 0.3s ease;
 }
 
+/* This creates hover effect for contact page links */
 .contact-text a:hover {
   color: var(--primary);
 }
 
+/* This styles social section title */
 .social-section h3 {
   font-size: 1.25rem;
   font-weight: 600;
@@ -1064,12 +1226,14 @@ body {
   color: var(--foreground);
 }
 
+/* This creates horizontal layout for social links with wrapping */
 .social-links {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
+/* This styles enhanced social links with icons */
 .social-link {
   display: flex;
   align-items: center;
@@ -1083,28 +1247,33 @@ body {
   transition: all 0.3s ease;
 }
 
+/* This creates enhanced hover effect for social links */
 .social-link:hover {
   background: var(--primary);
   color: white;
   transform: translateY(-2px);
 }
 
+/* This styles social link icons */
 .social-icon {
   font-size: 1.125rem;
 }
 
+/* This creates single column grid for additional contact info on mobile */
 .contact-additional {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
 }
 
+/* This creates three-column layout for additional contact info on tablet and larger */
 @media (min-width: 768px) {
   .contact-additional {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
+/* This styles additional info cards */
 .info-card {
   background: var(--card);
   padding: 2rem;
@@ -1112,6 +1281,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* This styles info card titles */
 .info-card h3 {
   font-size: 1.25rem;
   font-weight: 600;
@@ -1119,17 +1289,20 @@ body {
   color: var(--foreground);
 }
 
+/* This styles info card paragraphs */
 .info-card p {
   color: var(--muted);
   margin-bottom: 1rem;
   line-height: 1.6;
 }
 
+/* This removes default list styling for info cards */
 .info-card ul {
   list-style: none;
   padding: 0;
 }
 
+/* This styles info card list items with custom bullets */
 .info-card li {
   color: var(--muted);
   margin-bottom: 0.5rem;
@@ -1137,6 +1310,7 @@ body {
   position: relative;
 }
 
+/* This creates custom purple bullet points for info card items */
 .info-card li::before {
   content: "•";
   color: var(--primary);
@@ -1146,25 +1320,30 @@ body {
 }
 
 /* ===== RESPONSIVE ADJUSTMENTS FOR CONTACT PAGE ===== */
+/* This reduces contact page title size on very small screens */
 @media (max-width: 480px) {
   .contact-title {
     font-size: 2rem;
   }
 
+  /* This reduces gap between contact grid items on small screens */
   .contact-grid {
     gap: 2rem;
   }
 
+  /* This stacks social links vertically on small screens */
   .social-links {
     flex-direction: column;
   }
 
+  /* This reduces gap between additional contact items on small screens */
   .contact-additional {
     gap: 1.5rem;
   }
 }
 
 /* ===== SMOOTH TRANSITIONS FOR ALL INTERACTIVE ELEMENTS ===== */
+/* This adds smooth transitions for color, background, transform, and shadow to all elements */
 * {
   transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease,
     box-shadow 0.3s ease;

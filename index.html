@@ -2,29 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- This ensures responsive design on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geoffrey Magana Gitau - Home</title>
+    <!-- This links the favicon icon displayed in browser tabs -->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- This provides page description for search engines and social media -->
     <meta
       name="description"
       content="Crafting beautiful, functional, and user-centric digital experiences. 
       I turn complex problems into elegant solutions."
     />
+    <!-- This links the main CSS stylesheet -->
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- These preconnect links optimize Google Fonts loading performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- This imports the Space Grotesk font family from Google Fonts with multiple weights -->
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <!-- Nav-->
+    <!-- Navigation Bar -->
+    <!-- This creates the fixed nav bar at the top -->
     <nav class="navbar">
       <div class="nav-container">
+        <!-- This creates the logo/home link in the navigation -->
         <div class="nav-logo">
           <a href="#hero">Home</a>
         </div>
+        <!-- This creates the main nav menu items -->
         <ul class="nav-menu">
           <li><a href="#about">About</a></li>
           <li><a href="#education">Education</a></li>
@@ -32,6 +43,9 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <!-- This creates the hamburger menu toggle for mobile -->
+        <!-- Note: I tested the hamburger menu but it doesn't fully work, 
+         but included the quick links in the footer to provide mobile navigation -->
         <div class="nav-toggle">
           <span></span>
           <span></span>
@@ -41,24 +55,31 @@
     </nav>
 
     <!-- Hero Section -->
-    <!-- I need a Herooo -->
+    <!-- This creates the main landing section with title and description -->
     <section id="hero" class="hero">
+      <!-- This adds the dotted background pattern -->
       <div class="hero-background"></div>
       <div class="container">
+        <!-- This contains the main hero text content -->
         <div class="hero-content">
           <h1 class="hero-title">Geoffrey Magana Gitau</h1>
           <p class="hero-subtitle">Web Developer + Designer</p>
           <p class="hero-description">
-            I transform ideas into exceptional digital experiences. I craft
-            innovative solutions that drive business growth and user engagement.
+            I transform ideas into exceptional digital experiences. <br />
+            I craft innovative solutions that drive business growth and user
+            engagement.
           </p>
+          <!-- This creates the main CTA button -->
           <a href="#projects" class="btn btn-primary">Explore My Work</a>
         </div>
       </div>
+      <!-- This creates the floating tech stack tags -->
       <div class="tech-stack">
+        <!-- Each tech-item has custom positioning using CSS custom properties -->
         <div class="tech-item" style="--x: 10%; --y: 20%">React</div>
         <div class="tech-item" style="--x: 80%; --y: 15%">Next.js</div>
         <div class="tech-item" style="--x: 20%; --y: 60%">TypeScript</div>
+        <div class="tech-item" style="--x: 85%; --y: 40%">Python</div>
         <div class="tech-item" style="--x: 70%; --y: 55%">Node.js</div>
         <div class="tech-item" style="--x: 15%; --y: 80%">MySQL</div>
         <div class="tech-item" style="--x: 9%; --y: 40%">Firebase</div>
@@ -69,20 +90,24 @@
     </section>
 
     <!-- About Section -->
+    <!-- This creates the about me section with text and profile image -->
     <section id="about" class="about">
       <div class="container">
+        <!-- This creates a two-column grid for content and image -->
         <div class="about-grid">
+          <!-- This contains the about text content -->
           <div class="about-content">
             <h2 class="section-title">About Me</h2>
             <p class="about-text">
-              Hi, I'm Geoffrey Magana, Call Sign 'OdinSword'. I'm a passionate
-              Dev and Designer with one year experience, dedicated to creating
-              impactful digital solutions. With expertise in modern web
-              technologies, I specialize in building cool applications that
-              solve real-world problems and deliver exceptional user
-              experiences.
+              Hi, I'm Geoffrey Magana, Call Sign 'OdinSword'. <br />
+              I'm a passionate Dev and Designer with one year experience,
+              dedicated to creating impactful digital solutions. <br />
+              With expertise in modern web technologies, I specialize in
+              building cool applications that solve real-world problems and
+              deliver exceptional user experiences.
             </p>
           </div>
+          <!-- This contains the profile image -->
           <div class="about-image">
             <img
               src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1753797497/o1nsqcul2lknhj0h8o8d.jpg"
@@ -92,12 +117,15 @@
           </div>
         </div>
 
+        <!-- This creates the design philosophy section -->
         <div class="philosophy-section">
           <h3 class="philosophy-title">My Design Philosophy</h3>
           <p class="philosophy-subtitle">
             Three core principles that drive every project I undertake.
           </p>
+          <!-- This creates a three-column grid for philosophy cards -->
           <div class="philosophy-grid">
+            <!-- Each philosophy card represents a core design principle -->
             <div class="philosophy-card">
               <div class="philosophy-icon">💻</div>
               <h4>Clean & Efficient Code</h4>
@@ -130,15 +158,19 @@
     </section>
 
     <!-- Educational Background Section -->
+    <!-- This creates the education section with academic information -->
     <section id="education" class="education">
       <div class="container">
+        <!-- This creates the section header with title and subtitle -->
         <div class="section-header">
           <h2 class="section-title">Educational Background</h2>
           <p class="section-subtitle">
             My academic journey and continuous learning path.
           </p>
         </div>
+        <!-- This contains the main education content -->
         <div class="education-content">
+          <!-- This creates the education information card -->
           <div class="education-info">
             <h3>Bachelor of Science in Mathematics and Computer Science</h3>
             <p class="institution">
@@ -152,7 +184,10 @@
               development. My studies have equipped me with strong theoretical
               foundations and practical skills in software development.
             </p>
+            <!-- This creates the CV download button -->
             <div class="cv-download">
+              Check out my CV for more details: <br /><br />
+              <!-- This links to the CV PDF file for download -->
               <a
                 href="CV/GEOFFREY MAGANA PROFESSIONAL PROFILE.pdf"
                 download
@@ -166,36 +201,42 @@
     </section>
 
     <!-- Interests Section -->
+    <!-- This creates the interests and passions section -->
     <section id="interests" class="interests">
       <div class="container">
+        <!-- This creates the section header -->
         <div class="section-header">
           <h2 class="section-title">Interests & Passions</h2>
           <p class="section-subtitle">
             Beyond coding, here's what drives my creativity and innovation.
           </p>
         </div>
+        <!-- This contains the interests content -->
         <div class="interests-content">
+          <!-- This creates the introductory text about interests -->
           <div class="interests-text">
             <p>
               I'm the kind of dev who's either knee-deep in code or tinkering
-              with ideas for the next app that solves a real-world mess. When
-              I'm not debugging or diagramming workflows, you'll probably find
-              me deep in a CTF, glued to a good movie, or pulling off risky
+              with ideas for the next app that solves a real-world mess. <br />
+              When I'm not debugging or diagramming workflows, you'll probably
+              find me deep in a CTF, glued to a good movie, or pulling off risky
               board game moves like it's life or death.
             </p>
           </div>
+          <!-- This creates the list of specific interests -->
           <div class="interests-list">
             <h3>Areas of Interest</h3>
             <ul>
+              <!-- Each list item represents a specific area of interest -->
               <ul>
                 <li>Emerging Technologies & AI Integration</li>
                 <li>Open-Source Development & Community Building</li>
                 <li>User Experience Design & Human-Computer Interaction</li>
                 <li>Performance Optimization & Scalable Architecture</li>
                 <li>Mobile-First Development & Progressive Web Apps</li>
-                <li>Blockchain Technology & Decentralized Applications</li>
-                <li>Cloud Computing & DevOps Practices</li>
-                <li>Accessibility & Inclusive Design</li>
+                <li>Blockchain Technology & Decentralized Apps</li>
+                <li>Cloud Computing & DevOps</li>
+                <li>Clean UI & Inclusive Design</li>
               </ul>
             </ul>
           </div>
@@ -204,32 +245,38 @@
     </section>
 
     <!-- Languages Section -->
+    <!-- This creates the programming languages section -->
     <section id="languages" class="languages">
       <div class="container">
+        <!-- This creates the section header with playful title -->
         <div class="section-header">
           <h2 class="section-title">
             Languages I Speak (Fluently… and Occasionally)
           </h2>
           <p class="section-subtitle">
-            These are the languages I build in. From front-end structure to
-            back-end logic.
+            These are the languages I build in. <br />
+            From front-end structure to back-end logic.
           </p>
         </div>
+        <!-- This contains the languages content -->
         <div class="languages-content">
+          <!-- This creates introductory text about language proficiency -->
           <div class="languages-text">
             <p>
               My core stack lives in the web: TypeScript, PHP, HTML, and CSS.
-              I’ve also dabbled in Python enough to automate, experiment, and
+              <br />
+              I've also dabbled in Python enough to automate, experiment, and
               sometimes break things in the name of learning.
             </p>
           </div>
+          <!-- This creates lists of programming languages by proficiency level -->
           <div class="languages-list">
             <h3>Proficient In</h3>
             <ul>
               <li>TypeScript</li>
               <li>PHP</li>
-              <li>HTML</li>
-              <li>CSS</li>
+              <li>HTML-5</li>
+              <li>CSS-3</li>
             </ul>
             <h3>Explored & Experimented With</h3>
             <ul>
@@ -241,36 +288,43 @@
     </section>
 
     <!-- Projects Section -->
-    <!-- I had so many projects, I had to make an entire page for them, Just gotta keep building!!! -->
+    <!-- This creates the featured projects showcase -->
     <section id="projects" class="projects">
       <div class="container">
+        <!-- This creates the section header -->
         <div class="section-header">
           <h2 class="section-title">Featured Projects</h2>
           <p class="section-subtitle">
-            Discover how I transform complex challenges into elegant,
-            user-centric solutions that drive real results.
+            Discover how I transform complex challenges <br />
+            into elegant, user-centric solutions that drive real results.
           </p>
         </div>
 
+        <!-- This creates a responsive grid for project cards -->
         <div class="projects-grid">
+          <!-- Each project card is a clickable link to project details -->
           <a
             href="projects/zellow-enterprises.html"
             class="project-card project-link"
           >
+            <!-- This contains the project screenshot/image -->
             <div class="project-image">
               <img
                 src="https://res.cloudinary.com/dwqwwb2fh/image/upload/v1753043502/wgwxd1qjbzmld0o6mdyi.png"
                 alt="Zellow Enterprises"
               />
             </div>
+            <!-- This contains the project information -->
             <div class="project-content">
               <h3>Zellow Enterprises</h3>
               <p>
-                A comprehensive operations and logistics management platform
-                featuring advanced modules for Client Management, Gifting,
-                Dispatch, Inventory, Finance, and extensive Product
-                Customization including printing and engraving capabilities.
+                Zellow Enterprises is a personalized gifting platform that lets
+                customers create unique gifts through printing, engraving,
+                and other custom options. Behind the scenes, it runs on a full
+                operations system with tools for managing clients, inventory,
+                dispatch, finance, and more.
               </p>
+              <!-- This creates technology tags for the project -->
               <div class="project-tags">
                 <span class="tag">Next.js</span>
                 <span class="tag">Logistics</span>
@@ -324,6 +378,7 @@
             </div>
           </a>
         </div>
+        <!-- This creates the "view all projects" button -->
         <div class="view-all-projects">
           <a href="projects.html" class="btn btn-secondary"
             >View All Projects</a
@@ -333,8 +388,10 @@
     </section>
 
     <!-- Contact Section -->
+    <!-- This creates the contact section with form and contact information -->
     <section id="contact" class="contact">
       <div class="container">
+        <!-- This creates the section header with call-to-action -->
         <div class="section-header">
           <h2 class="section-title">Let's Build Something Amazing</h2>
           <p class="section-subtitle">
@@ -342,13 +399,16 @@
             exceptional digital experiences that drive results.
           </p>
         </div>
+        <!-- This creates a two-column layout for contact info and form -->
         <div class="contact-content">
+          <!-- This contains contact information and social links -->
           <div class="contact-info">
             <h3>Get In Touch</h3>
             <p>
               Ready to start your next project? Let's discuss how I can help
               bring your vision to life.
             </p>
+            <!-- Each contact item displays a method of communication -->
             <div class="contact-item">
               <span class="contact-icon">📧</span>
               <a href="mailto:geoffreymagana21@gmail.com"
@@ -359,6 +419,7 @@
               <span class="contact-icon">📱</span>
               <a href="tel:0742663614">0742663614</a>
             </div>
+            <!-- This creates social media links -->
             <div class="social-links">
               <a
                 href="https://x.com/supremeimprints"
@@ -383,13 +444,16 @@
               >
             </div>
           </div>
+          <!-- This creates the contact form -->
           <div class="contact-form">
             <h3>Start Your Project</h3>
+            <!-- This form uses mailto to send emails (basic implementation) -->
             <form
               action="mailto:geoffreymagana21@gmail.com"
               method="post"
               enctype="text/plain"
             >
+              <!-- Each form group contains a label and input field -->
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required />
@@ -411,6 +475,7 @@
                   required
                 ></textarea>
               </div>
+              <!-- This creates the form submit button -->
               <button type="submit" class="btn btn-primary">
                 Send Message
               </button>
@@ -421,9 +486,12 @@
     </section>
 
     <!-- Footer -->
+    <!-- This creates the site footer with links and contact information -->
     <footer class="footer">
       <div class="container">
+        <!-- This creates a four-column grid for footer content -->
         <div class="footer-content">
+          <!-- Each footer section contains related links -->
           <div class="footer-section">
             <h4>Quick Links</h4>
             <ul>
@@ -435,14 +503,15 @@
           <div class="footer-section">
             <h4>Education & Interests</h4>
             <ul>
-              <li><a href="#about">Educational Background</a></li>
-              <li><a href="#about">Interests & Passions</a></li>
-              <li><a href="#about">Programming Languages</a></li>
+              <li><a href="#education">Educational Background</a></li>
+              <li><a href="#interests">Interests & Passions</a></li>
+              <li><a href="#languages">Programming Languages</a></li>
             </ul>
           </div>
           <div class="footer-section">
             <h4>Connect</h4>
             <ul>
+              <!-- These links open in new tabs for external social media -->
               <li>
                 <a href="https://x.com/supremeimprints" target="_blank"
                   >Twitter</a
@@ -470,6 +539,7 @@
             </ul>
           </div>
         </div>
+        <!-- This creates the footer bottom with copyright -->
         <div class="footer-bottom">
           <p>&copy; 2025 Geoffrey Magana Gitau. All rights reserved.</p>
         </div>
